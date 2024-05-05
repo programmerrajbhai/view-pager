@@ -83,9 +83,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 }
             });
 
+           /* Toast.makeText(itemView.getContext(), "Calling....", Toast.LENGTH_LONG).show();
             Toast.makeText(itemView.getContext(), "Calling....", Toast.LENGTH_LONG).show();
-            Toast.makeText(itemView.getContext(), "Calling....", Toast.LENGTH_LONG).show();
-
+*/
 
 
 
@@ -105,7 +105,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                       //  Toast.makeText(itemView.getContext(), "Video Start", Toast.LENGTH_SHORT).show();
 
 
-                        mediaPlayer.release();
+                      //  mediaPlayer.release();
 
                         // Here the video starts
                         return true;
@@ -114,7 +114,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
 
 
-                    return false;
+                    return true;
 
 
                 }
@@ -126,22 +126,6 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                     // Video playback has completed
                     // You can perform any desired action here
 
-                    AlertDialog.Builder builder = new AlertDialog.Builder(itemView.getContext());
-                    builder.setTitle("Call end")
-                            .setIcon(R.drawable.baseline_call_end_24)
-                            .setMessage("Continue will play and Advertisment")
-                            .setCancelable(false)
-                            .setPositiveButton("Try Again", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    mediaPlayer.release();
-                                    Context context = itemView.getContext();
-                                    Intent intent = new Intent(context, MainActivity.class);
-                                    context.startActivity(intent);
-
-
-                                }});
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
 
                     //Toast.makeText(itemView.getContext(), "Video End", Toast.LENGTH_SHORT).show();
 
