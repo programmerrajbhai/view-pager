@@ -57,6 +57,7 @@
                     android:textStyle="bold" />
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/follow_Card"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
@@ -75,6 +76,7 @@
                         android:layout_height="match_parent"
                         >
                         <TextView
+                            android:id="@+id/tvFollow"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:text="Follow"
@@ -101,6 +103,53 @@ i will tolk about my cousin,my cousin was very good girl,
                android:ellipsize="end"/>
         </LinearLayout>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentRight="true"
+        android:layout_width="60dp"
+        android:weightSum="10"
+        android:layout_marginEnd="10dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            />
+        <ImageView
+            android:id="@+id/likeImg"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:padding="13dp"
+            android:layout_height="0dp"
+            android:src="@drawable/heart_white"
+            />
+        <ImageView
+            android:id="@+id/commentImg"
+            android:padding="13dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:src="@drawable/comment"
+            />
+        <ImageView
+            android:id="@+id/shareImg"
+            android:padding="13dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:src="@drawable/share_white"
+            />
+        <ImageView
+            android:id="@+id/bookmarkImg"
+            android:padding="13dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            android:src="@drawable/bookmark_white"
+            />
     </LinearLayout>
 
 

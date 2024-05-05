@@ -7,12 +7,14 @@ import android.media.MediaPlayer;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
@@ -50,14 +52,22 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
     public class VideoViewHolder extends RecyclerView.ViewHolder{
 
         VideoView videoView;
-        TextView title,desc;
+        TextView title,desc,tvFollow;
+        ImageView likeImg,commentImg,shareImg,bookmarkImg;
         Context context;
+        CardView follow_Card;
 
       public MediaPlayer mediaPlayer;
 
         public VideoViewHolder(@NonNull View itemView) {
             super(itemView);
             videoView= itemView.findViewById(R.id.videoView);
+            likeImg= itemView.findViewById(R.id.likeImg);
+            commentImg= itemView.findViewById(R.id.commentImg);
+            shareImg= itemView.findViewById(R.id.shareImg);
+            bookmarkImg= itemView.findViewById(R.id.bookmarkImg);
+            tvFollow= itemView.findViewById(R.id.tvFollow);
+            follow_Card= itemView.findViewById(R.id.follow_Card);
         }
         //////This line problem here
         public void setVideoData (video videox){
@@ -87,8 +97,24 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
             Toast.makeText(itemView.getContext(), "Calling....", Toast.LENGTH_LONG).show();
 */
 
-
-
+            likeImg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    likeImg.setImageResource(R.drawable.heart_red);
+                }
+            });
+            bookmarkImg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    bookmarkImg.setImageResource(R.drawable.bookmark_red);
+                          }
+            });
+            follow_Card.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    tvFollow.setText("Following");
+                }
+            });
             //>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<
             //>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<
             //>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<
