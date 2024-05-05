@@ -77,7 +77,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 @Override
                 public void onPrepared(MediaPlayer mediaPlayer) {
 
-                    mediaPlayer.start();
+                    //mediaPlayer.start();
 
                     Float videoRatio = mediaPlayer.getVideoWidth() / (float) mediaPlayer.getVideoHeight();
                     Float screenRatio = videoView.getWidth() / (float) videoView.getHeight();
@@ -101,14 +101,20 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 @Override
                 public void onClick(View v) {
                     likeImg.setImageResource(R.drawable.heart_red);
+
+                    Toast.makeText(itemView.getContext(), "liked", Toast.LENGTH_SHORT).show();
+
                 }
             });
             bookmarkImg.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     bookmarkImg.setImageResource(R.drawable.bookmark_red);
-                          }
+                    Toast.makeText(itemView.getContext(), "Added To Favorites", Toast.LENGTH_SHORT).show();
+
+                }
             });
+
             follow_Card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -151,6 +157,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 public void onCompletion(MediaPlayer mediaPlayer) {
                     // Video playback has completed
                     // You can perform any desired action here
+
 
 
                     //Toast.makeText(itemView.getContext(), "Video End", Toast.LENGTH_SHORT).show();

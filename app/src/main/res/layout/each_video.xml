@@ -49,7 +49,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="3dp"
                     android:layout_marginTop="10dp"
                     android:text="Programmer Raj"
                     android:textColor="@color/white"
@@ -58,6 +58,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/follow_Card"
+                    android:clickable="true"
+                    android:foreground="?attr/selectableItemBackground"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginStart="10dp"
@@ -119,6 +121,8 @@ i will tolk about my cousin,my cousin was very good girl,
             android:layout_weight="5"
             />
         <ImageView
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:id="@+id/likeImg"
             android:layout_width="match_parent"
             android:layout_weight="1"
@@ -127,6 +131,9 @@ i will tolk about my cousin,my cousin was very good girl,
             android:src="@drawable/heart_white"
             />
         <ImageView
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+
             android:id="@+id/commentImg"
             android:padding="13dp"
             android:layout_width="match_parent"
@@ -135,6 +142,9 @@ i will tolk about my cousin,my cousin was very good girl,
             android:src="@drawable/comment"
             />
         <ImageView
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+
             android:id="@+id/shareImg"
             android:padding="13dp"
             android:layout_width="match_parent"
@@ -143,6 +153,9 @@ i will tolk about my cousin,my cousin was very good girl,
             android:src="@drawable/share_white"
             />
         <ImageView
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+
             android:id="@+id/bookmarkImg"
             android:padding="13dp"
             android:layout_width="match_parent"
