@@ -57,7 +57,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
         Context context;
         CardView follow_Card;
 
-      public MediaPlayer mediaPlayer;
+      //public MediaPlayer mediaPlayer;
 
         public VideoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -77,7 +77,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 @Override
                 public void onPrepared(MediaPlayer mediaPlayer) {
 
-                    //mediaPlayer.start();
+                   mediaPlayer.start();
 
                     Float videoRatio = mediaPlayer.getVideoWidth() / (float) mediaPlayer.getVideoHeight();
                     Float screenRatio = videoView.getWidth() / (float) videoView.getHeight();
@@ -93,9 +93,9 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
                 }
             });
 
-           /* Toast.makeText(itemView.getContext(), "Calling....", Toast.LENGTH_LONG).show();
-            Toast.makeText(itemView.getContext(), "Calling....", Toast.LENGTH_LONG).show();
-*/
+       // Toast.makeText(itemView.getContext(), "Loading....", Toast.LENGTH_SHORT).show();
+          //  Toast.makeText(itemView.getContext(), "Calling....", Toast.LENGTH_LONG).show();
+
 
             likeImg.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -124,20 +124,20 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
             //>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<
             //>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<
             //>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<
-            if (mediaPlayer!=null) mediaPlayer.release();
+        //  if (mediaPlayer!=null) mediaPlayer.release();
 
-            mediaPlayer= MediaPlayer.create(itemView.getContext(),R.raw.call);
-            mediaPlayer.start();
+       //mediaPlayer= MediaPlayer.create(itemView.getContext(),R.raw.call);
+       //  mediaPlayer.start();
 
             videoView.setOnInfoListener(new MediaPlayer.OnInfoListener() {
                 @Override
                 public boolean onInfo(MediaPlayer mp, int what, int extra) {
 
                     if (what == MediaPlayer.MEDIA_INFO_VIDEO_RENDERING_START) {
-                      //  Toast.makeText(itemView.getContext(), "Video Start", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(itemView.getContext(), "Video Start", Toast.LENGTH_SHORT).show();
 
 
-                      //  mediaPlayer.release();
+             //         mediaPlayer.release();
 
                         // Here the video starts
                         return true;
@@ -173,7 +173,5 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.VideoViewHol
 
 
     }
-
-
 
 }
